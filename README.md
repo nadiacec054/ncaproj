@@ -1,39 +1,76 @@
-# ncaproj
-math symbol classifier 
+# Handwritten Mathematical Symbol Classifier
 
+A Python project that recognises handwritten mathematical symbols using machine learning and deep learning. It includes an interactive Streamlit application where users can upload an image, draw a symbol, recognise mathematical expressions, and evaluate the models.
 
-built a Streamlit app where you can upload an image, draw a symbol, or draw a mathematical expression. There is also a calculator to evaluate typed expressions.
+## Features
 
+- **Image Classification:** Upload an image of a handwritten mathematical symbol and predict its class.
+- **Draw a Symbol:** Draw a symbol on a canvas and classify it.
+- **Expression Recognition:** Draw a mathematical expression and identify its symbols.
+- **Calculator:** Evaluate supported mathematical expressions.
+- **Model Evaluation:** View model performance and evaluation results.
+- **Two Models:** Uses a Support Vector Machine (SVM) and a Convolutional Neural Network (CNN).
 
+## Technologies Used
 
-Tech Stack
+- Python
+- TensorFlow and Keras
+- Scikit-learn
+- Streamlit
+- NumPy
+- Pillow
 
-Python
-Scikit-learn
-NumPy
-Pillow
-Streamlit
+## Dataset
 
-How I Built It
+The project uses the HASYv2 dataset, which contains handwritten mathematical symbols. The data is used to train and evaluate the classification models.
 
-Dataset: Used the HASYv2 dataset, which contains images of handwritten mathematical symbols.
+## CNN Model Performance
 
-Training the model: Used Scikit-learn to train a model on the dataset to recognise different digits and mathematical symbols.
+The CNN was trained and evaluated using a train-validation-test split.
 
-Image preprocessing: Created a separate preprocessing function to convert images to grayscale, crop the symbol, resize it, and prepare the pixel values for the model.
+| Metric | Result |
+|---|---:|
+| Test Accuracy | 99.14% |
+| Macro F1 Score | 98.28% |
+| Top-3 Accuracy | 99.69% |
 
-Symbol prediction: Used the trained model to predict the symbol in an uploaded image or a drawing on the app.
+These results describe the CNN's performance on the held-out test set.
 
-Calculator: Created a separate calculator module to evaluate mathematical expressions using Python's AST module.
+## Running the Project
 
-Streamlit app: Connected the different modules into an app with options to upload images, draw symbols, draw expressions, and type expressions.
+1. Clone the repository:
 
+   ```bash
+   git clone https://github.com/nadiacec054/ncaproj.git
+   cd ncaproj
+   ```
 
-Install the dependencies:
-pip install -r requirements.txt
+2. Create and activate a virtual environment:
 
-Run the app:
-streamlit run app.py
+   ```bash
+   python3 -m venv .venv
+   source .venv/bin/activate
+   ```
 
-Limitations
-Single-symbol recognition works better than full expression recognition. Handwritten expressions can sometimes be split or recognised incorrectly.
+3. Install the required dependencies using the project's dependency file.
+
+4. Start the Streamlit application:
+
+   ```bash
+   streamlit run app.py
+   ```
+
+5. Open the local URL displayed in the terminal.
+
+## Project Structure
+
+- `app.py` — Streamlit application and user interface
+- `train.py` — Model training
+- `predict.py` — Symbol prediction
+- `evaluate.py` — Model evaluation
+- `models/` — Saved models and model metadata
+- `evaluation_results/` — Evaluation outputs
+
+## Project Goal
+
+The goal of this project is to explore how machine learning and deep learning can be used to recognise handwritten mathematical symbols and provide a simple interactive interface for testing the models.

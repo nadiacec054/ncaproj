@@ -1,0 +1,9 @@
+{
+  "model": "SVM",
+  "evaluation_images": 2168,
+  "classes": 21,
+  "accuracy": 0.9492619926199262,
+  "macro_f1": 0.9044295704154569,
+  "average_inference_ms": 1.2901546166974167,
+  "note": "Preliminary results: the original training split has not been verified, so test-set overlap is possible."
+}
